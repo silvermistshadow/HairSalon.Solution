@@ -4,9 +4,9 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.EntityFrameworkCore;
-using VAR.Models;
+using HairSalon.Models;
 
-namespace VAR
+namespace HairSalon
 {
   public class Startup
   {
@@ -26,7 +26,7 @@ namespace VAR
       services.AddMvc();
 
       services.AddEntityFrameworkMySql()
-        .AddDbContext<AnimalShelterContext>(options => options
+        .AddDbContext<HairSalonContext>(options => options
         .UseMySql(Configuration["ConnectionStrings:DefaultConnection"]));
     }
 
