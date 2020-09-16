@@ -26,7 +26,6 @@ namespace HairSalon.Controllers
         {
             ViewBag.StylistId = new SelectList(_db.Stylists, "StylistId", "Name");
             ViewBag.Count = _db.Stylists.Count();
-            Console.WriteLine(ViewBag.Count);
             return View();
         }
         
@@ -44,10 +43,10 @@ namespace HairSalon.Controllers
             ViewBag.CuisineId = new SelectList(_db.Stylists, "StylistId", "Name");
             return View(thisClient);
         }
-            public ActionResult Edit(int id)
+        public ActionResult Edit(int id)
         {
             Client thisClient = _db.Clients.FirstOrDefault(client => client.ClientId == id);
-            ViewBag.CategoryId = new SelectList(_db.Stylists, "StylistId", "Name");
+            ViewBag.StylistId = new SelectList(_db.Stylists, "StylistId", "Name");
             return View(thisClient);
         }
 
